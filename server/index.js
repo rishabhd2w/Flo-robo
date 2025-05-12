@@ -1,13 +1,11 @@
-// server/index.js
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
+const mongoose = require('mongoose');
 
 const app = express();
-const PORT = 4000;
-
-app.use(cors());
+app.use(cors()); // <- This enables CORS
 app.use(express.json());
+const PORT=4000;
 
 mongoose.connect('mongodb://localhost:27017/ros_missions', {
   useNewUrlParser: true,
@@ -26,6 +24,7 @@ const Station = mongoose.model('Station', stationSchema);
 // server/index.js (add/update)
 app.post('/stations', async (req, res) => {
   const { name, x, y } = req.body;
+  console.log(req.body);
 
   if (!name || x === undefined || y === undefined) {
     return res.status(400).json({ error: 'Missing data' });

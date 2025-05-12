@@ -17,7 +17,7 @@ source /opt/ros/<your-distro>/setup.bash
 # 2. Run the turtlesim node
 ros2 run turtlesim turtlesim_node
 # 3. Start rosbridge websocket server (in a new terminal)
-ros2 launch rosbridge_server rosbridge_websocket_launch.xml
+ros2 run turtlesim turtlesim_node
 # 4. Run the ROS2 Python bridge (in a new terminal)
 cd ros2_bridge
 python3 ros2_bridge.py
