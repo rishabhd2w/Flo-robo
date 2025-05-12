@@ -1,4 +1,4 @@
-// Updated React app with animated box moving from station A to B
+//src to dst shortes path 
 import React, { useState, useEffect, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
